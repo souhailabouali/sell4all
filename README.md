@@ -1,59 +1,59 @@
-# Sell4All — Data Exploration with Python
+# Sell4All — Exploration des données avec Python
 
-This project was created as part of the **Artificial Intelligence Development** program at YouCode. The goal was to get comfortable with data exploration and cleaning using Python, before moving on to building actual recommendation features.
+Ce projet a été réalisé dans le cadre du parcours **Développement en Intelligence Artificielle** à YouCode. L'idée, c'était de se familiariser avec l'exploration et le nettoyage de données en Python, avant de se lancer dans de vraies fonctionnalités de recommandation.
 
-## What's this about?
+## De quoi ça parle ?
 
-Sell4All is an online second-hand clothing store that's been running for about six months. They want to add AI-powered product recommendations for their users, based on things like country, age, gender, spending habits, and purchase history.
+Sell4All, c'est une boutique en ligne de vêtements d'occasion qui existe depuis environ six mois. Ils veulent ajouter un système de recommandation de produits basé sur le pays, l'âge, le genre, les dépenses et les habitudes d'achat des clients.
 
-But before jumping into that, we needed to properly understand and clean up the customer data they had. So that's what this project focuses on — exploring the dataset (`dataset-sell4all.csv`) using Pandas and Matplotlib in a Jupyter notebook.
+Mais avant d'arriver là, il fallait d'abord bien comprendre et nettoyer les données clients qu'ils avaient. Du coup, ce projet se concentre sur l'exploration du fichier `dataset-sell4all.csv` avec Pandas et Matplotlib, dans un notebook Jupyter.
 
-## How I approached it
+## Comment j'ai procédé
 
-### Day 1 — August 14, 2026
-- Set up the environment with Miniconda, Jupyter, Pandas, and Matplotlib
-- Loaded the CSV file into a Pandas DataFrame
-- Checked out the first few rows (`df.head()`) to get a feel for the data
-- Ran `df.info()` to understand the structure, data types, and missing values
+### Jour 1 — 14 août 2026
+- Installation de l'environnement (Miniconda, Jupyter, Pandas, Matplotlib)
+- Chargement du CSV dans un DataFrame Pandas
+- Affichage des premières lignes (`df.head()`) pour voir à quoi ça ressemble
+- Utilisation de `df.info()` pour comprendre la structure, les types de données et les valeurs manquantes
 
-### Day 2 — August 15, 2026
-- Calculated mean and median for `Age` and `Customer spendings`
-- Took a stab at the bonus: median age per country using `groupby`
-- Made a bar chart to show total spending per country (Matplotlib)
-- Cleaned things up: removed rows where spending was under €10, then dropped duplicates
-- Saved the cleaned data into a new CSV (`dataset-sell4all-clean.csv`), keeping only the columns that seemed relevant: `Country`, `Age`, `Gender`, `Customer spendings`
+### Jour 2 — 15 août 2026
+- Calcul de la moyenne et de la médiane pour `Age` et `Customer spendings`
+- Tentative du bonus : médiane de l'âge par pays avec `groupby`
+- Création d'un graphique à barres pour visualiser les dépenses totales par pays (Matplotlib)
+- Nettoyage : suppression des lignes avec des dépenses inférieures à 10 €, puis suppression des doublons
+- Export des données nettoyées dans un nouveau CSV (`dataset-sell4all-clean.csv`), en ne gardant que les colonnes utiles : `Country`, `Age`, `Gender`, `Customer spendings`
 
-### Day 3 — August 16, 2026
-- Tweaked a few things and made sure the Python version was correctly noted
-- Wrote up this README and got everything onto GitHub
+### Jour 3 — 16 août 2026
+- Derniers ajustements, vérification de la version Python utilisée
+- Rédaction de ce README et mise en ligne sur GitHub
 
-## What's included
+## Ce qui a été fait
 
-- [x] Reading the CSV with Pandas
-- [x] Showing the first 5 rows
-- [x] Explaining the dataset structure (rows, columns, data types) in plain Markdown
-- [x] Mean and median for `Age` and `Customer spendings`
-- [x] Bonus: median age broken down by country
-- [x] Bar chart for total spendings by country
-- [x] Cleaning: filtering out spendings under €10 and removing duplicates
-- [x] Exporting the cleaned CSV with selected columns
+- [x] Lecture du CSV avec Pandas
+- [x] Affichage des 5 premières lignes
+- [x] Explication de la structure du dataset (lignes, colonnes, types) en Markdown
+- [x] Moyenne et médiane de `Age` et `Customer spendings`
+- [x] Bonus : médiane d'âge par pays
+- [x] Graphique à barres des dépenses totales par pays
+- [x] Nettoyage : filtrage des dépenses < 10 € et suppression des doublons
+- [x] Export du CSV nettoyé avec les colonnes sélectionnées
 
-## A few bumps along the way
+## Quelques petits obstacles
 
-- **Unnecessary columns** — The original dataset had personal info like `Name`, `Email`, `Phone Number`, and `Address`. I didn't want to mess with the raw data, so I kept them in the original file but excluded them from the cleaned version I exported.
-- **Aggregation for the chart** — I went with total spending per country (`groupby('Country').sum()`) instead of average, since it felt more useful to see the overall economic weight of each country, even if customer counts varied.
-- **Cleaning order** — I filtered out low spenders first, then removed duplicates. Seemed more logical to get rid of irrelevant rows before dealing with redundancy.
+- **Colonnes inutiles** — Le dataset d'origine contenait des infos personnelles comme `Name`, `Email`, `Phone Number` et `Address`. Je ne voulais pas toucher aux données brutes, donc je les ai gardées dans le fichier original, mais je ne les ai pas incluses dans la version nettoyée exportée.
+- **Choix de l'agrégation pour le graphique** — J'ai pris la somme des dépenses par pays (`groupby('Country').sum()`) plutôt que la moyenne, parce que ça donne une meilleure idée du poids économique total de chaque pays, même si le nombre de clients varie.
+- **Ordre du nettoyage** — J'ai d'abord filtré les petits dépensiers, puis j'ai supprimé les doublons. Ça me semblait plus logique d'éliminer les lignes peu pertinentes avant de traiter les redondances.
 
-## How to run this thing
+## Comment lancer le projet
 
-### What you'll need
+### Ce qu'il faut
 
 - [Miniconda](https://docs.conda.io/en/latest/miniconda.html)
 - Python 3.x
 - Jupyter Notebook
-- `pandas`, `matplotlib`
+- Les bibliothèques `pandas` et `matplotlib`
 
-### Setting it up
+### Installation
 
 ```bash
 conda create -n sell4all python=3.13
